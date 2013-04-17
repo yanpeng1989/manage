@@ -21,7 +21,7 @@
             </p>
             <p>
                 <label>银行卡号：</label>
-                <input name="card_number" class="required creditcard" type="text" size="30" value="" alt="请输入银行卡号"/>
+                <input name="card_number" class="required" type="text" size="30" value="" alt="请输入银行卡号"/>
             </p>
             <p>
                 <label>公司名称：</label>

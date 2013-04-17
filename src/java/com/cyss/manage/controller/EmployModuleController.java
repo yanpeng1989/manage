@@ -62,6 +62,10 @@ public class EmployModuleController {
 
     @RequestMapping(value = "/module/employ/employment_insert", method = {RequestMethod.GET, RequestMethod.POST})
     public void employmentInsert(HttpServletRequest request, PrintWriter out) {
+        for (String key : request.getParameterMap().keySet()) {
+            String[] values = request.getParameterMap().get(key);
+            System.out.println(key + ":" + StringUtil.arrayConnectByChar(values, ','));
+        }
         Map<String, Object> map = SystemUtil.fillRequest(request);
         employmentService.addEmployment(map);
         out.write(StringUtil.getDoneJson("200", "人员基本信息管理", "人员基本信息管理", "/manage/module/employ/employment_list.do", "操作成功"));
